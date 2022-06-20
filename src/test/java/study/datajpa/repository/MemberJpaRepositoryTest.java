@@ -14,7 +14,8 @@ import java.util.List;
 @Transactional
 class MemberJpaRepositoryTest {
 
-    @Autowired MemberJpaRepository memberJpaRepository;
+    @Autowired
+    MemberJpaRepository memberJpaRepository;
 
     @Test
     public void testMember() {
@@ -45,22 +46,16 @@ class MemberJpaRepositoryTest {
         Assertions.assertThat(all.size()).isEqualTo(2);
 
         //카운트 검증
-        long count  = memberJpaRepository.count();
+        long count = memberJpaRepository.count();
         Assertions.assertThat(count).isEqualTo(2);
-
 
 
         //삭제 검증
         memberJpaRepository.delete(member1);
         memberJpaRepository.delete(member2);
 
-        long deleteCount  = memberJpaRepository.count();
+        long deleteCount = memberJpaRepository.count();
         Assertions.assertThat(deleteCount).isEqualTo(0);
 
     }
-
-
-
-
-
 }
