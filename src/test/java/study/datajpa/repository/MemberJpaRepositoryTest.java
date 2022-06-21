@@ -59,6 +59,7 @@ class MemberJpaRepositoryTest {
 
     }
 
+
     @Test
     public void findByUsernameAndAgeGreaterThen() {
         Member m1 = new Member("AAA", 10);
